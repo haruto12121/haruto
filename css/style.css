@@ -130,6 +130,22 @@ p, li {
   border-radius: 8px;
   transition: transform 0.3s;
 }
+.photo-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;       /* 横スクロール可能に */
+  scroll-snap-type: x mandatory; /* スナップスクロール */
+  padding: 20px 0;
+}
+
+.photo-gallery img {
+  flex: 0 0 auto;        /* 横並びに固定 */
+  width: 300px;          /* 好きなサイズに調整 */
+  height: auto;
+  border-radius: 8px;
+  scroll-snap-align: start; /* スナップの位置 */
+}
+
 
 .photo-gallery img:hover {
   transform: scale(1.05);
