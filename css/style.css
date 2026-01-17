@@ -1,3 +1,19 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f5;
+}
+
+header {
+  padding: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 8px;
+  color: #000;
+}
+
 .photo-gallery {
   display: flex;
   gap: 16px;
@@ -5,8 +21,7 @@
 }
 
 .photo-gallery img {
-  display: block;      /* ← 超重要 */
-  width: 200px;        /* 見えるサイズ */
+  display: block;
+  width: 200px;
   height: auto;
-  opacity: 1;          /* 念のため */
 }
