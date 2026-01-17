@@ -84,6 +84,24 @@ nav a:hover {
   width: 400px;
 }
 
+/* Sumo ページに卒論リンクを追加したい場合は flex で横並び */
+.sumodoc {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.sumodoc a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sumodoc a:hover {
+  text-decoration: underline;
+}
+
 /* ===== Footer ===== */
 footer {
   text-align: center;
