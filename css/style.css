@@ -6,7 +6,7 @@ body {
   color: #111;
 }
 
-/* ===== Hello Animation ===== */
+/* ===== Hello Animation (index.html) ===== */
 .hello-wrapper {
   display: flex;
   justify-content: center;
@@ -44,24 +44,19 @@ body {
   z-index: 100;
 }
 
-.site-header h1 {
-  font-size: 28px;
-  margin: 0;
-}
-
 nav {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 16px;
+  font-weight: bold;
 }
 
 nav a {
   text-decoration: none;
   color: #111;
-  font-weight: bold;
-  font-size: 16px;
 }
 
-/* ===== Wrapper / Sections ===== */
+/* ===== Wrapper & Sections ===== */
 .wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -72,8 +67,7 @@ nav a {
   margin-bottom: 80px;
 }
 
-h2 {
-  font-size: 28px;
+h1, h2 {
   margin-bottom: 12px;
 }
 
@@ -82,17 +76,41 @@ p, li {
   line-height: 2;
 }
 
-/* ===== Photo Gallery ===== */
-.photo-gallery {
+/* ===== Slider / 横スクロールギャラリー ===== */
+.slider {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 16px;
-  justify-content: center;
   padding: 20px 0;
 }
 
-.photo-gallery img {
-  width: 200px;
+.slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.slider img {
+  flex: 0 0 auto;
+  width: 300px;
   height: auto;
-  display: block;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.slider img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
 }
