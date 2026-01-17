@@ -150,3 +150,24 @@ p, li {
 .photo-gallery img:hover {
   transform: scale(1.05);
 }
+
+/* lightbox用 */
+.lightbox {
+  display: none;           /* 通常は非表示 */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox:target {
+  display: flex;           /* クリックされたときに表示 */
+}
