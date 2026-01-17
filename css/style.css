@@ -4,34 +4,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f5;
   color: #111;
+  overflow-x: hidden; /* 横スクロール防止 */
 }
 
-/* ===== Hello Animation ===== */
-.hello-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* 画面全体 */
-  background-color: #ffeedb; /* 明るくポップ */
-}
-
-.hello-text {
-  font-size: 64px;
-  font-weight: bold;
-  color: #ff6f61;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInUp 2s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== Navigation ===== */
+/* ===== Header / Navigation ===== */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -44,6 +20,11 @@ body {
   z-index: 100;
 }
 
+.site-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -51,147 +32,64 @@ nav {
   font-weight: bold;
 }
 
-nav a, nav span {
+nav a {
   text-decoration: none;
   color: #111;
-  cursor: pointer;
-}
-
-nav .dropdown {
-  position: relative;
-}
-
-nav .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #f7f7f5;
-  border: 1px solid #ccc;
+  padding: 4px 8px;
   border-radius: 4px;
-  min-width: 140px;
-  flex-direction: column;
-  z-index: 10;
 }
 
-nav .dropdown-content a {
-  display: block;
-  padding: 8px;
-  color: #111;
-  border-bottom: 1px solid #eee;
+nav a:hover {
+  background-color: #ffeedb;
+  color: #ff6f61;
 }
 
-nav .dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-nav .dropdown:hover .dropdown-content {
-  display: flex;
-  flex-direction: column;
-}
-
-nav .dropdown-content a:hover {
-  background-color: #e2e2e0;
-}
-
-/* ===== Sections ===== */
+/* ===== Wrapper ===== */
 .wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 40px 24px;
 }
 
-.section {
-  margin-bottom: 80px;
-}
-
-h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-p, li {
-  font-size: 16px;
-  line-height: 2;
-}
-
-/* ===== Photo Gallery Horizontal Scroll ===== */
+/* ===== Photo Gallery 横スライド ===== */
 .photo-gallery {
   display: flex;
   overflow-x: auto;
   gap: 16px;
-  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+}
+
+.photo-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.photo-gallery::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
 }
 
 .photo-gallery img {
-  flex: 0 0 auto; /* 横並びに固定 */
-  height: 300px;   /* 適度に縮小 */
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-.photo-gallery {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;       /* 横スクロール可能に */
-  scroll-snap-type: x mandatory; /* スナップスクロール */
-  padding: 20px 0;
-}
-
-.photo-gallery img {
-  flex: 0 0 auto;        /* 横並びに固定 */
-  width: 300px;          /* 好きなサイズに調整 */
+  flex: 0 0 auto;
+  width: 200px;
   height: auto;
   border-radius: 8px;
-  scroll-snap-align: start; /* スナップの位置 */
+  scroll-snap-align: start;
+  display: block;
 }
 
-
-.photo-gallery img:hover {
-  transform: scale(1.05);
+/* 釣りページだけ 3・4枚目を大きくする */
+.photo-gallery.fishing img:nth-child(3),
+.photo-gallery.fishing img:nth-child(4) {
+  width: 400px;
 }
 
-/* lightbox用 */
-.lightbox {
-  display: none;           /* 通常は非表示 */
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.lightbox:target {
-  display: flex;           /* クリックされたときに表示 */
-}
-
-.photo-gallery {
-  display: flex;
-  flex-wrap: wrap;  /* 横幅オーバーしたら折り返す */
-  gap: 16px;
-  padding: 20px;
-}
-
-/* 卒論リンクを写真と同じ行に置く */
-.thesis-link {
-  display: flex;
-  align-items: center;  /* 写真の高さに合わせる */
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.thesis-link a {
-  color: #ff6f61;
-  text-decoration: underline;
-}
-
-.thesis-link a:hover {
-  color: #e25550;
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 32px;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  margin-top: 80px;
+  font-size: 14px;
 }
