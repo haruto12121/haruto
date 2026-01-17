@@ -66,17 +66,20 @@ nav a {
 /* ===== Photo Gallery ===== */
 .photo-gallery {
   display: flex;
-  flex-wrap: wrap;
   gap: 16px;
+  padding: 20px;
+  flex-wrap: wrap; /* 画面サイズに合わせて折り返す */
+  justify-content: center; /* 中央寄せ */
 }
 
 .photo-gallery img {
-  width: 200px;
+  width: 200px;   /* ここで統一 */
   height: auto;
   display: block;
   cursor: pointer;
   border-radius: 8px;
 }
+
 
 /* ===== Lightbox ===== */
 .lightbox {
