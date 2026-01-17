@@ -4,11 +4,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f5;
   color: #111;
-  overflow-x: hidden; /* 横スクロール防止 */
 }
 
 /* ===== Header / Navigation ===== */
-.site-header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,94 +19,68 @@ body {
   z-index: 100;
 }
 
-.site-header h1 {
-  font-size: 24px;
-  margin: 0;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-weight: bold;
-}
-
-nav a {
+nav a, nav span {
   text-decoration: none;
   color: #111;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-nav a:hover {
-  background-color: #ffeedb;
-  color: #ff6f61;
+  margin-right: 16px;
+  font-weight: bold;
 }
 
 /* ===== Wrapper ===== */
 .wrapper {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 40px 16px;
 }
 
-/* ===== Photo Gallery 横スライド ===== */
-.photo-gallery {
+/* ===== Gallery ===== */
+.photo-gallery, .fishing-gallery {
   display: flex;
-  overflow-x: auto;
   gap: 16px;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
+  flex-wrap: wrap;
 }
 
-.photo-gallery::-webkit-scrollbar {
-  height: 8px;
-}
-
-.photo-gallery::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
-}
-
-.photo-gallery img {
-  flex: 0 0 auto;
+.photo-gallery img, .fishing-gallery img {
+  cursor: pointer;
   width: 200px;
   height: auto;
-  border-radius: 8px;
-  scroll-snap-align: start;
-  display: block;
+  border-radius: 6px;
+  transition: transform 0.2s;
 }
 
-/* 釣りページだけ 3・4枚目を大きくする */
-.photo-gallery.fishing img:nth-child(3),
-.photo-gallery.fishing img:nth-child(4) {
-  width: 400px;
+.photo-gallery img:hover, .fishing-gallery img:hover {
+  transform: scale(1.05);
 }
 
-/* Sumo ページに卒論リンクを追加したい場合は flex で横並び */
-.sumodoc {
-  display: flex;
+/* ===== Lightbox ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin-top: 16px;
+  z-index: 1000;
 }
 
-.sumodoc a {
-  color: #ff6f61;
-  text-decoration: none;
-  font-weight: bold;
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
 }
 
-.sumodoc a:hover {
-  text-decoration: underline;
+.lightbox:target {
+  display: flex;
 }
 
 /* ===== Footer ===== */
 footer {
   text-align: center;
-  padding: 32px;
-  background: #fff;
+  padding: 20px 0;
+  background-color: #fff;
   border-top: 1px solid #ccc;
-  margin-top: 80px;
-  font-size: 14px;
+  margin-top: 40px;
 }
