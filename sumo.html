@@ -2,96 +2,11 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sumo Photos - 弘中陽登 Portfolio</title>
-  <style>
-    /* ===== Base ===== */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f5;
-      color: #111;
-    }
-
-    header.site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav a {
-      margin-right: 16px;
-      text-decoration: none;
-      color: #111;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ff6f61;
-    }
-
-    main.wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 24px;
-    }
-
-    /* ===== Photo Gallery + Thesis ===== */
-    .photo-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .photo-gallery img {
-      width: 180px;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-    }
-
-    .thesis-link {
-      margin-left: 24px;
-      font-size: 18px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-
-    .thesis-link a {
-      color: #ff6f61;
-      text-decoration: underline;
-    }
-
-    .thesis-link a:hover {
-      color: #e25550;
-    }
-
-    footer {
-      text-align: center;
-      padding: 32px;
-      background-color: #fff;
-      border-top: 1px solid #ccc;
-      margin-top: 80px;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <header class="site-header">
     <h1>Sumo Photos</h1>
     <nav>
@@ -109,19 +24,17 @@
       <img src="sumo3.jpeg" alt="Sumo photo 3">
       <img src="sumo4.jpeg" alt="Sumo photo 4">
       <img src="sumo5.jpeg" alt="Sumo photo 5">
+    </div>
 
-      <!-- 卒論リンク -->
-      <div class="thesis-link">
-        <a href="https://example.com/your-thesis.pdf" target="_blank" rel="noopener">
-          卒論はこちら
-        </a>
-      </div>
+    <!-- 卒論リンク -->
+    <div class="sumodoc">
+      <p>卒論はこちら →</p>
+      <a href="https://example.com/thesis" target="_blank" rel="noopener">My Thesis</a>
     </div>
   </main>
 
   <footer>
     <p>© 2026 弘中陽登 Portfolio</p>
   </footer>
-
 </body>
 </html>
