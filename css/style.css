@@ -1,14 +1,38 @@
+/* 小さい写真のギャラリー */
 .photo-gallery {
-  display: flex;      /* 横並び */
-  flex-wrap: wrap;    /* 画面幅で折り返す */
+  display: flex;
   gap: 16px;
   padding: 20px;
 }
 
 .photo-gallery img {
-  display: block;     /* 余計なスペースを消す */
-  width: 200px;       /* 見えるサイズに調整 */
+  width: 200px;
   height: auto;
-  border-radius: 8px; /* 少し丸くするオプション */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: block;
+  border-radius: 8px;
+}
+
+/* 横スライド部分 */
+.slider-container {
+  overflow-x: auto;        /* 横スクロール可能に */
+  scroll-snap-type: x mandatory; /* スナップスクロール */
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.slider {
+  display: flex;
+}
+
+.slide {
+  flex: 0 0 100vw;        /* 画面幅いっぱい */
+  scroll-snap-align: start; /* スクロールでスナップ */
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
