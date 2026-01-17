@@ -174,23 +174,24 @@ p, li {
 
 .photo-gallery {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;  /* 横幅オーバーしたら折り返す */
   gap: 16px;
   padding: 20px;
 }
 
-.photo-gallery img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 3,4枚目だけ横並びに */
-.photo-row {
+/* 卒論リンクを写真と同じ行に置く */
+.thesis-link {
   display: flex;
-  gap: 16px;
+  align-items: center;  /* 写真の高さに合わせる */
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.photo-row img {
-  width: 50%; /* 2枚で横いっぱいに */
+.thesis-link a {
+  color: #ff6f61;
+  text-decoration: underline;
+}
+
+.thesis-link a:hover {
+  color: #e25550;
 }
