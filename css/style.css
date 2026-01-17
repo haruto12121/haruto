@@ -171,3 +171,17 @@ p, li {
 .lightbox:target {
   display: flex;           /* クリックされたときに表示 */
 }
+
+.photo-gallery {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  flex-wrap: wrap; /* 横に入りきらなければ次の行に折り返す */
+}
+
+.photo-gallery img {
+  display: block;
+  max-width: 100%;  /* 画面幅に合わせて縮小 */
+  height: auto;
+}
+
