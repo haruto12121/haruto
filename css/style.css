@@ -97,18 +97,22 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
+  background-color: #111; /* 黒背景 */
+  
+  display: flex;              /* これがポイント */
+  justify-content: center;    /* 横方向中央 */
+  align-items: center;        /* 縦方向中央 */
+  
   z-index: 9999;
-  animation: fadeOut 2s ease forwards 1.5s;
+  animation: fadeOut 2s ease forwards 1.5s; /* 1.5秒後に消える */
 }
 
 .welcome h1 {
   color: #fff;
-  font-size: 48px;
+  font-size: 72px;      /* 大きめに */
   letter-spacing: 0.2em;
+  margin: 0;
   animation: popIn 0.8s ease forwards;
 }
 
@@ -123,6 +127,7 @@ a:hover {
     visibility: hidden;
   }
 }
+
 
 /* ===== Scroll Animation ===== */
 .fade, .fade-left, .fade-right {
