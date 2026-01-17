@@ -2,162 +2,103 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Arial", "Helvetica", sans-serif;
   color: #111;
-  position: relative;
-  overflow-x: hidden;
-
-  /* 背景グラデーション + 星 */
-  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, #fff 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.2;
-  animation: moveStars 60s linear infinite;
-  z-index: 0;
-}
-
-@keyframes moveStars {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(-100px, -100px); }
-}
-
-/* ===== Wrapper ===== */
-.wrapper {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-/* ===== Sections ===== */
-.section {
-  margin-bottom: 120px;
-}
-
-h1 {
-  font-size: 48px;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-h2 {
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 16px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 2;
-  margin: 0 0 16px 0;
-}
-
-a {
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #ccc;
-}
-
-a:hover {
-  border-bottom: 1px solid #111;
-}
-
-/* ===== 作品 ===== */
-.works {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.work {
-  width: calc(33% - 16px);
-}
-
-.work img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
+  background: #f7f7f5;
 }
 
 /* ===== ウェルカム画面 ===== */
 .welcome {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  background-color: #111; /* 黒背景 */
-  
-  display: flex;              /* これがポイント */
-  justify-content: center;    /* 横方向中央 */
-  align-items: center;        /* 縦方向中央 */
-  
-  z-index: 9999;
-  animation: fadeOut 2s ease forwards 1.5s; /* 1.5秒後に消える */
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background-color:#111;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  z-index:10;
+  animation: fadeOut 4s ease forwards 2s;
 }
 
 .welcome h1 {
-  color: #fff;
-  font-size: 72px;      /* 大きめに */
-  letter-spacing: 0.2em;
-  margin: 0;
-  animation: popIn 0.8s ease forwards;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  font-size:80px;
+  color:#ff6b6b;
+  text-shadow:2px 2px 4px rgba(0,0,0,0.3);
+  animation: popIn 2s ease forwards;
+}
+
+.welcome p.name {
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  font-size:32px;
+  margin-top:16px;
+  animation: popIn 2s ease forwards 0.5s;
 }
 
 @keyframes popIn {
-  0% { opacity: 0; transform: scale(0.5); }
-  100% { opacity: 1; transform: scale(1); }
+  0% { opacity:0; transform:scale(0.5);}
+  100% { opacity:1; transform:scale(1);}
 }
 
 @keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+  to { opacity:0; visibility:hidden; }
 }
 
+/* ===== メインラッパー ===== */
+.wrapper {
+  max-width:800px;
+  margin:0 auto;
+  padding:120px 24px;
+}
 
-/* ===== Scroll Animation ===== */
-.fade, .fade-left, .fade-right {
-  opacity: 0;
+/* ===== セクション ===== */
+.section {
+  margin-bottom:100px;
+}
+
+h1 { font-size:48px; font-weight:500; margin-bottom:12px; }
+h2 { font-size:24px; font-weight:400; margin-bottom:12px; }
+p { font-size:16px; line-height:2; margin:0 0 16px 0; }
+
+a { color:#111; text-decoration:none; border-bottom:1px solid #ccc; }
+a:hover { border-bottom:1px solid #111; }
+
+/* ===== フェードイン ===== */
+.fade {
+  opacity:0;
+  transform:translateY(20px);
   animation: fadeUp 1.2s ease forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 30%;
-  pointer-events: auto;
+  animation-delay:0.5s;
 }
-
-.fade-left { transform: translateX(-40px); }
-.fade-right { transform: translateX(40px); }
-
-/* 遅延を順番に設定 */
-.fade:nth-child(1) { animation-delay: 0s; }
-.fade:nth-child(2) { animation-delay: 0.3s; }
-.fade:nth-child(3) { animation-delay: 0.6s; }
-.fade-left:nth-child(1) { animation-delay: 0.9s; }
-.fade-right:nth-child(2) { animation-delay: 1.2s; }
-.fade-left:nth-child(3) { animation-delay: 1.5s; }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translate(0,0);
-  }
+  to { opacity:1; transform:translateY(0);}
 }
 
-/* ===== レスポンシブ ===== */
-@media (max-width: 768px) {
-  .works { flex-direction: column; }
-  .work { width: 100%; }
+/* ===== 作品スライド ===== */
+.carousel {
+  overflow:hidden;
+  width:100%;
+}
+
+.carousel-track {
+  display:flex;
+  width:calc(300px * 6 + 24px * 6);
+  animation: slide 30s linear infinite;
+}
+
+.carousel-track img {
+  width:300px;
+  height:400px;
+  object-fit:cover;
+  margin-right:24px;
+  border-radius:8px;
+}
+
+@keyframes slide {
+  0% { transform:translateX(0);}
+  100% { transform:translateX(-50%);}
 }
