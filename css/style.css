@@ -174,14 +174,23 @@ p, li {
 
 .photo-gallery {
   display: flex;
+  flex-direction: column;
   gap: 16px;
   padding: 20px;
-  flex-wrap: wrap; /* 横に入りきらなければ次の行に折り返す */
 }
 
 .photo-gallery img {
-  display: block;
-  max-width: 100%;  /* 画面幅に合わせて縮小 */
+  max-width: 100%;
   height: auto;
+  display: block;
 }
 
+/* 3,4枚目だけ横並びに */
+.photo-row {
+  display: flex;
+  gap: 16px;
+}
+
+.photo-row img {
+  width: 50%; /* 2枚で横いっぱいに */
+}
