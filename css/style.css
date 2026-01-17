@@ -1,27 +1,14 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f5;
-}
-
-header {
-  padding: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  margin-right: 8px;
-  color: #000;
-}
-
 .photo-gallery {
-  display: flex;
+  display: flex;      /* 横並び */
+  flex-wrap: wrap;    /* 画面幅で折り返す */
   gap: 16px;
   padding: 20px;
 }
 
 .photo-gallery img {
-  display: block;
-  width: 200px;
+  display: block;     /* 余計なスペースを消す */
+  width: 200px;       /* 見えるサイズに調整 */
   height: auto;
+  border-radius: 8px; /* 少し丸くするオプション */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
