@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <h1>Fishing Photos</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -16,17 +16,27 @@
       <a href="fishing.html">Fishing</a>
     </nav>
   </header>
-
   <main class="wrapper">
-    <div class="photo-gallery fishing">
-      <img src="fishing1.jpeg" alt="Fishing photo 1">
-      <img src="fishing2.jpeg" alt="Fishing photo 2">
-      <img src="fishing3.jpeg" alt="Fishing photo 3">
-      <img src="fishing4.jpeg" alt="Fishing photo 4">
-      <img src="fishing5.jpeg" alt="Fishing photo 5">
+    <div class="photo-gallery">
+      <a href="#fishing1"><img src="fishing1.jpeg"></a>
+      <a href="#fishing2"><img src="fishing2.jpeg"></a>
     </div>
-  </main>
 
+    <div class="fishing-gallery">
+      <a href="#fishing3"><img src="fishing3.jpeg"></a>
+      <a href="#fishing4"><img src="fishing4.jpeg"></a>
+    </div>
+
+    <div class="photo-gallery">
+      <a href="#fishing5"><img src="fishing5.jpeg"></a>
+    </div>
+
+    <div id="fishing1" class="lightbox"><a href="#"><img src="fishing1.jpeg"></a></div>
+    <div id="fishing2" class="lightbox"><a href="#"><img src="fishing2.jpeg"></a></div>
+    <div id="fishing3" class="lightbox"><a href="#"><img src="fishing3.jpeg"></a></div>
+    <div id="fishing4" class="lightbox"><a href="#"><img src="fishing4.jpeg"></a></div>
+    <div id="fishing5" class="lightbox"><a href="#"><img src="fishing5.jpeg"></a></div>
+  </main>
   <footer>
     <p>© 2026 弘中陽登 Portfolio</p>
   </footer>
