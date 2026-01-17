@@ -2,37 +2,52 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>弘中陽登 Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <!-- ===== Hello Animation ===== -->
+  <div class="hello-wrapper">
+    <h1 class="hello-text">Hello</h1>
+  </div>
+
+  <!-- ===== ナビゲーション ===== -->
+  <header class="site-header">
     <h1>弘中陽登 Portfolio</h1>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="sumo.html">Sumo</a> |
-      <a href="mountain.html">Mountain</a> |
-      <a href="fishing.html">Fishing</a>
+      <a href="#">Home</a> |
+      <div class="dropdown">
+        <span>Who am I?</span>
+        <div class="dropdown-content">
+          <a href="sumo.html">Sumo</a>
+          <a href="mountain.html">Mountain</a>
+          <a href="fishing.html">Fishing</a>
+        </div>
+      </div>
     </nav>
   </header>
-  <main>
-    <section>
-      <h2>自己紹介</h2>
-      <p>名前: 弘中陽登</p>
-      <p>生年月日: 2003/12/11</p>
-      <p>大学: Waseda University</p>
-      <p>クラブ: <a href="https://wasedawangel.sakura.ne.jp/" target="_blank" rel="noopener">ワンゲル</a></p>
+
+  <!-- ===== 自己紹介セクション ===== -->
+  <main class="wrapper">
+    <section class="intro section">
+      <h2>About Me</h2>
+      <p><strong>名前:</strong> 弘中陽登</p>
+      <p><strong>生年月日:</strong> 2003/12/11</p>
+      <p><strong>大学:</strong> Waseda University</p>
+      <p><strong>Club:</strong> <a href="https://wasedawangel.sakura.ne.jp/" target="_blank" rel="noopener">ワンゲル</a></p>
     </section>
-    <section>
-      <h2>スキル</h2>
+
+    <section class="skills section">
+      <h2>Skills</h2>
       <ul>
-        <li>珠算検定1級</li>
-        <li>統計検定3級</li>
+        <li>珠算検定 1級</li>
+        <li>統計検定 3級</li>
       </ul>
     </section>
-    <section>
-      <h2>趣味</h2>
+
+    <section class="hobbies section">
+      <h2>Hobbies</h2>
       <ul>
         <li>登山</li>
         <li>ボクシング</li>
@@ -41,8 +56,13 @@
       </ul>
     </section>
   </main>
+
   <footer>
     <p>© 2026 弘中陽登 Portfolio</p>
+  </footer>
+</body>
+</html>
+6 弘中陽登 Portfolio</p>
   </footer>
 </body>
 </html>
