@@ -1,3 +1,16 @@
+.photo-gallery {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+}
+
+.photo-gallery img {
+  display: block;      /* ← 超重要 */
+  width: 200px;        /* 見えるサイズ */
+  height: auto;
+  opacity: 1;          /* 念のため */
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
