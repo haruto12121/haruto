@@ -115,27 +115,22 @@ p, li {
   line-height: 2;
 }
 
-/* ===== 横スクロール写真ギャラリー ===== */
-.photo-slider {
-  display: flex;          /* 横並び */
-  overflow-x: auto;       /* 横スクロール可能 */
+/* ===== Photo Gallery Horizontal Scroll ===== */
+.photo-gallery {
+  display: flex;
+  overflow-x: auto;
   gap: 16px;
-  padding: 16px;
-  scroll-behavior: smooth; /* スクロール滑らか */
+  padding: 20px 0;
 }
 
-.photo-slider img {
-  flex: 0 0 auto;         /* 横幅固定 */
-  width: 240px;           /* バランス良いサイズ */
-  height: auto;
+.photo-gallery img {
+  flex: 0 0 auto; /* 横並びに固定 */
+  height: 300px;   /* 適度に縮小 */
+  object-fit: cover;
   border-radius: 8px;
+  transition: transform 0.3s;
 }
 
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 16px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  margin-top: 40px;
+.photo-gallery img:hover {
+  transform: scale(1.05);
 }
