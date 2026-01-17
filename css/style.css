@@ -1,38 +1,116 @@
-/* 小さい写真のギャラリー */
-.photo-gallery {
+/* ===== Base ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f5;
+  color: #111;
+}
+
+/* ===== Hello Animation ===== */
+.hello-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 画面全体 */
+  background-color: #ffeedb; /* 明るくポップ */
+}
+
+.hello-text {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ff6f61;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Navigation ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
   gap: 16px;
-  padding: 20px;
+  font-weight: bold;
 }
 
-.photo-gallery img {
-  width: 200px;
-  height: auto;
+nav a, nav span {
+  text-decoration: none;
+  color: #111;
+  cursor: pointer;
+}
+
+nav .dropdown {
+  position: relative;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f7f7f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 140px;
+  flex-direction: column;
+  z-index: 10;
+}
+
+nav .dropdown-content a {
   display: block;
-  border-radius: 8px;
+  padding: 8px;
+  color: #111;
+  border-bottom: 1px solid #eee;
 }
 
-/* 横スライド部分 */
-.slider-container {
-  overflow-x: auto;        /* 横スクロール可能に */
-  scroll-snap-type: x mandatory; /* スナップスクロール */
+nav .dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+nav .dropdown:hover .dropdown-content {
   display: flex;
-  gap: 20px;
-  padding: 20px 0;
+  flex-direction: column;
 }
 
-.slider {
-  display: flex;
+nav .dropdown-content a:hover {
+  background-color: #e2e2e0;
 }
 
-.slide {
-  flex: 0 0 100vw;        /* 画面幅いっぱい */
-  scroll-snap-align: start; /* スクロールでスナップ */
+/* ===== Sections ===== */
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px;
 }
 
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
+.section {
+  margin-bottom: 80px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+p, li {
+  font-size: 16px;
+  line-height: 2;
 }
