@@ -1,116 +1,44 @@
-/* ===== Base ===== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f5;
-  color: #111;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弘中陽登 Portfolio</title>
+  <!-- CSSリンク -->
+  <link rel="stylesheet" href="/haruto/css/style.css">
+</head>
+<body>
 
-/* ===== Hello Animation ===== */
-.hello-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* 画面全体 */
-  background-color: #ffeedb; /* 明るくポップ */
-}
+  <!-- ===== Hello ===== -->
+  <div class="hello-wrapper">
+    <h1 class="hello-text">Hello</h1>
+  </div>
 
-.hello-text {
-  font-size: 64px;
-  font-weight: bold;
-  color: #ff6f61;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInUp 2s ease forwards;
-}
+  <!-- ===== Navigation ===== -->
+  <header class="site-header">
+    <div class="logo">弘中陽登 Portfolio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <span class="dropdown">Who am I?
+        <div class="dropdown-content">
+          <a href="sumo.html">Sumo</a>
+          <a href="mountain.html">Mountain</a>
+          <a href="fishing.html">Fishing</a>
+        </div>
+      </span>
+    </nav>
+  </header>
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  <!-- ===== 自己紹介セクション ===== -->
+  <div class="wrapper section">
+    <h2>About Me</h2>
+    <p>名前: 弘中陽登</p>
+    <p>生年月日: 2003/12/11</p>
+    <p>大学: Waseda University</p>
+    <p>Club: <a href="https://wasedawangel.sakura.ne.jp/" target="_blank" rel="noopener">Waseda Wander Vogel Club</a></p>
+    <p>スキル: 珠算検定1級, 統計検定3級</p>
+    <p>趣味: 登山, ボクシング, 釣り, スキー</p>
+  </div>
 
-/* ===== Navigation ===== */
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-weight: bold;
-}
-
-nav a, nav span {
-  text-decoration: none;
-  color: #111;
-  cursor: pointer;
-}
-
-nav .dropdown {
-  position: relative;
-}
-
-nav .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #f7f7f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  min-width: 140px;
-  flex-direction: column;
-  z-index: 10;
-}
-
-nav .dropdown-content a {
-  display: block;
-  padding: 8px;
-  color: #111;
-  border-bottom: 1px solid #eee;
-}
-
-nav .dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-nav .dropdown:hover .dropdown-content {
-  display: flex;
-  flex-direction: column;
-}
-
-nav .dropdown-content a:hover {
-  background-color: #e2e2e0;
-}
-
-/* ===== Sections ===== */
-.wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-.section {
-  margin-bottom: 80px;
-}
-
-h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-p, li {
-  font-size: 16px;
-  line-height: 2;
-}
+</body>
+</html>
